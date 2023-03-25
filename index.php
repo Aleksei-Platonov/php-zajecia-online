@@ -1,2 +1,9 @@
 <?php
-echo "Hello WORLD!!!";
+
+declare(strict_types=1);
+
+namespace App;
+
+include_once('./src/utils/debug.php');
+
+dump('To faktyczne dziala');
