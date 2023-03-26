@@ -9,11 +9,11 @@
         <form action="/?action=create" class="note-form" method="post">
             <ul>
                 <li>
-                    <lable for="title">Tytul <span class="required">*</span></lable>
+                    <label for="title">Tytul <span class="required">*</span></label>
                     <input type="text" name="title" id="title" class="filed-long">
                 </li>
                 <li>
-                    <lable for="field5">Tresc</lable>
+                    <label for="field5">Tresc</label>
                     <textarea name="description" id="field5" class="field-long field-textarea"></textarea>
                 </li>
                 <li>
