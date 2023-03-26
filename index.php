@@ -14,8 +14,18 @@ $action = $_GET['action'] ?? DEFAULT_ACTION;
 $viewParams = [];
 
 if ($action === 'create') {
-    $viewParams['resultCreate'] = 'Tworzymy nowa notatre';
+    $page = 'create';
+    $created = false;
+    if (!empty($_POST)) {
+        $viewParams = [
+            'title' => $_POST['title'],
+            'description' => $_POST['description'],
+        ];
+        $created = true;
+    }
+    $viewParams['created'] = $created;
 } else {
+    $page = 'list';
     $viewParams['resultList'] = 'Wyswietlamy liste notatek';
 }
 
@@ -23,4 +33,4 @@ if ($action === 'create') {
 
 
 $view = new View();
-$view->render($action, $viewParams);
+$view->render($page, $viewParams);
