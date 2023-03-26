@@ -17,7 +17,7 @@
         <nav>
             <ul>
                 <li><a href="/">Lista notatek</a></li>
-                <li><a href="/?action-create">Nowa notatka</a></li>
+                <li><a href="/?action=create">Nowa notatka</a></li>
             </ul>
         </nav>
 
