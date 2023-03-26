@@ -23,12 +23,12 @@
 
         <article>
             <?php
-            if ($action === 'create') : ?>
-                <h3>Nowa notatka</h3>
-            <?php else : ?>
-                <h3>Lista notatek</h3>
-                <?php echo htmlentities($action ?? '') ?>
-            <?php endif; ?>
+            if ($page === 'create') {
+                include_once('../templates/pages/create.php');
+            } else {
+                include_once('../templates/pages/list.php');
+            }
+            ?>
         </article>
     </main>
 
