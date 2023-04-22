@@ -14,13 +14,14 @@ class Controller
     private array $getData;
     private array $postData;
     private static $configuration = [];
+    private Database $database;
 
 
     public function __construct(array $getData, array $postData)
     {
         $this->getData = $getData;
         $this->postData = $postData;
-        $db = new Database(self::$configuration);
+        $this->database = new Database(self::$configuration);
     }
 
     public static function initConfiguration(array $configuration): void
@@ -39,12 +40,14 @@ class Controller
             case 'create':
                 $page = 'create';
                 $created = false;
-                if (!empty($_POST)) {
+                if (!empty($this->postData)) {
                     $viewParams = [
-                        'title' => $_POST['title'],
-                        'description' => $_POST['description'],
+                        'title' => $this->postData['title'],
+                        'description' => $this->postData['description'],
                     ];
+                    header('Location: /');
                     $created = true;
+                    $this->database->createNote($viewParams);
                 }
                 $viewParams['created'] = $created;
                 break;
