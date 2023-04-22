@@ -30,7 +30,7 @@ class Database
     private function validateConfig(array $config): void
     {
         if (empty($config['database']) || empty($config['user']) || empty($config['host'])) {
-            throw new ConfigurationException('Problem z konfiguracją połączenia do bazy danych. Skontaktuj się z administratorem')
+            throw new ConfigurationException('Problem z konfiguracją połączenia do bazy danych. Skontaktuj się z administratorem');
         }
     }
 }
